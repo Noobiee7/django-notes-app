@@ -17,6 +17,6 @@ COPY . /app/backend
 EXPOSE 8000
 
 # Set default command to run migrations and start the server
-ENTRYPOINT ["python", "manage.py"]
-CMD ["runserver", "0.0.0.0:8000"]
+RUN python manage.py migrate
+RUN python manage.py makemigrations
 
